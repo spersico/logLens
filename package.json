@@ -34,6 +34,7 @@
     "cli"
   ],
   "dependencies": {
+    "@doeixd/create-virtualized-list-solid": "^1.3.0",
     "@solid-primitives/websocket": "^1.2.2",
     "debug": "^4.3.7",
     "dexie": "^3.2.7",

@@ -2,31 +2,36 @@
   width: calc(100% - 2px);
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   margin: 0;
   font-size: 0.8rem;
   border-left: #335d92 2px solid;
   background: black;
   padding: 10px 0px;
   color: #fafafa;
+  z-index: 0;
 }
 .streamId {
-  width: 100px;
+  width: 140px;
   text-align: left;
-  max-width: 140px;
+  min-width: 140px;
   margin-left: 10px;
+  z-index: 1;
 }
 
 .timestamp {
-  min-width: 100px;
+  width: 70px;
+  min-width: 70px;
   text-align: left;
   margin-right: 20px;
+  z-index: 1;
 }
 
 .content {
+  display: block;
   min-width: 200px;
   text-align: left;
   text-wrap: pretty;
   margin: 0;
+  z-index: 1;
 }

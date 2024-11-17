@@ -21,11 +21,12 @@ const Strategies: Record<
   json(message: LogMessage) {
     try {
       const nicerJson = `${JSON.stringify(JSON.parse(message.raw), null, 2)}`;
-
       message.formatted = hljs.highlight(nicerJson, {
         language: 'json',
         ignoreIllegals: true,
       }).value;
+      message.raw = nicerJson;
+      message.lineCount = message.formatted?.split('\n').length || 1;
       return message;
     } catch (error) {
       return this.plaintext(message);
@@ -37,6 +38,7 @@ const Strategies: Record<
         message.raw = JSON.stringify(message.raw, null, 2);
       }
       message.formatted = hljs.highlightAuto(message.raw).value;
+      message.lineCount = message.formatted?.split('\n').length || 1;
       return message;
     } catch (error) {
       console.error(`🐛 | Strategies.plaintext | error:`, error);
@@ -55,6 +57,7 @@ export function parseLogMessage(log: RawLogMessage): LogMessage {
     formatted: log.content,
     raw: log.content,
     streamId: log.streamid,
+    lineCount: 1,
   };
   return Strategies[log.contentType](message);
 }

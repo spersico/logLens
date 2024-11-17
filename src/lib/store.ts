@@ -16,8 +16,9 @@ export class Store extends Dexie {
   }
 
   async addLog(rawLog: RawLogMessage) {
-    const { id, streamId, timestamp, raw, formatted } = parseLogMessage(rawLog);
-    await this.logs.add({ id, streamId, timestamp, raw, formatted });
+    const { id, streamId, timestamp, raw, formatted, lineCount } =
+      parseLogMessage(rawLog);
+    await this.logs.add({ id, streamId, timestamp, raw, formatted, lineCount });
   }
 
   async clearLogs() {
@@ -40,9 +41,10 @@ export class Store extends Dexie {
 export const db = new Store();
 
 export const [filters, setFilters] = createSignal<{
+  autoScroll: boolean;
   streamId?: string;
   search?: string;
-}>({});
+}>({ autoScroll: true });
 
 export async function logFilteringLogic(): Promise<LogMessage[]> {
   const { streamId, search } = filters();

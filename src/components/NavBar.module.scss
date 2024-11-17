@@ -1,12 +1,14 @@
 .root {
+  position: sticky;
   height: 50px;
-  background-color: #335d92;
+  background-color: #335e92;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 1rem;
   padding: 0 1rem;
   align-items: center;
+  z-index: 10;
 
   select {
     width: 150px;

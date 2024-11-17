@@ -38,4 +38,5 @@ export type LogMessage = {
   timestamp?: string;
   raw: string;
   formatted?: string;
+  lineCount: number;
 };

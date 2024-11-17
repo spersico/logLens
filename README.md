@@ -43,8 +43,8 @@ The way it works is that you pipe the output of a process to `logLensPub`, then 
 
 ## ☑ TODO LIST:
  - [x] Make it so that the logLensSub runs both the frontend and the BFF server at the same time
- - [ ] Fix the performance issues with the frontend
- - [ ] Add filtering for logs in the UI, improve storing and handling data.
+ - [x] Fix the performance issues with the frontend (partially done)
+ - [x] Add filtering for logs in the UI, improve storing and handling data.
  - [ ] Add lots of styling improvements
  - [ ] Add tests
  - [ ] Add more documentation

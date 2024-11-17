@@ -17,7 +17,7 @@ main {
   margin: 0 auto;
   color: #fafafa;
   height: calc(100vh - 50px);
-  overflow-y: scroll;
+  overflow-y: none;
 }
 
 h1 {
