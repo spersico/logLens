@@ -3,7 +3,7 @@
   "description": "A tool for viewing and filtering logs in a web browser UI",
   "author": "spersico",
   "license": "MIT",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "type": "module",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "test-util:publisher": "node testUtils/chattyServer.js 2>&1 | DEBUG=logLens:* ./cli/publisher.js",
     "test-util:publisher:json": "node testUtils/chattyServer.js --contentType=json 2>&1 | DEBUG=logLens:* node ./cli/publisher.js --contentType=json",
     "build": "tsc && vite build --outDir=cli/logLensSub-frontend",
-    "publish": "npm run build && npm publish"
+    "publish": "npm publish"
   },
   "main": "cli/subscriber.js",
   "nodemonConfig": {
